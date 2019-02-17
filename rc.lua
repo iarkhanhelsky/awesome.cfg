@@ -158,7 +158,7 @@ lain.layout.cascade.tile.extra_padding = 5
 lain.layout.cascade.tile.nmaster       = 5
 lain.layout.cascade.tile.ncol          = 2
 
-beautiful.init(string.format(gears.filesystem.get_configuration_dir() .. "/theme/theme.lua", chosen_theme))
+beautiful.init(string.format(gears.filesystem.get_configuration_dir() .. "/modules/theme.lua", chosen_theme))
 -- }}}
 
 -- {{{ Menu
