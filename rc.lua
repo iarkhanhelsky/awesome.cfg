@@ -61,6 +61,7 @@ commands.run_once({
 
 local modkey       = "Mod4"
 local altkey       = "Mod1"
+
 local terminal     = "sakura"
 local editor       = os.getenv("EDITOR") or "vim"
 local browser      = "firefox"
@@ -156,6 +157,7 @@ local myawesomemenu = {
     { "restart", awesome.restart },
     { "quit", function() awesome.quit() end }
 }
+
 awful.util.mymainmenu = freedesktop.menu.build({
     icon_size = beautiful.menu_height or 16,
     before = {
@@ -200,7 +202,7 @@ root.buttons(my_table.join(
 globalkeys = my_table.join(
     -- Take a screenshot
     -- https://github.com/lcpz/dots/blob/master/bin/screenshot
-    awful.key({ altkey }, "p", function() os.execute("screenshot") end,
+    awful.key({ altkey }, "p", commands.screenshot,
               {description = "take a screenshot", group = "hotkeys"}),
 
     -- X screen locker

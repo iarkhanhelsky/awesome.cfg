@@ -9,6 +9,10 @@ function commands.run_once(cmd_arr)
   end
 end
 
+function commands.screenshot()
+  os.execute("maim -so | xclip -selection clipboard -t image/png")
+end
+
 -- This function implements the XDG autostart specification
 --[[
 awful.spawn.with_shell(
