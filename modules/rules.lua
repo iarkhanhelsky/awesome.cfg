@@ -30,11 +30,16 @@ local rules =  {
 
     { rule = { class = "Thunderbird" },
       properties = { screen = 1, tag = awful.util.tagnames[2] } },
-    { rule = { class = "House Hunter" },
-      properties = { floating = true } },
 
     { rule = { class = "Gimp", role = "gimp-image-window" },
           properties = { maximized = true } },
+
+    --
+
+    { rule = { class = "House Hunter" },
+      properties = { floating = true } },
+    { rule = { name = "Simulator" },
+      properties = { floating = true } },
 }
 
 
