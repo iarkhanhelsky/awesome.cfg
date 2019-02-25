@@ -40,6 +40,9 @@ local rules =  {
       properties = { floating = true } },
     { rule = { name = "Simulator" },
       properties = { floating = true } },
+    -- Idea modals like "Run anything", "Search anything"
+    { rule = { name = "win%d+", class = "jetbrains-idea"},
+      properties = { titlebars_enabled = false, border_width = 0 } }
 }
 
 
