@@ -162,20 +162,33 @@ local bat = lain.widget.bat({
 
         perc = perc .. ' ' .. markup.fontfg(fonts.iconic .. ' 9', '#ffffff', baticon)
 
-        widget:set_markup(markup.fontfg(theme.font, theme.fg_focus, '  ' .. perc .. ' '))
+        widget:set_markup(markup.fontfg(theme.font, theme.fg_focus, perc))
     end
 })
 
 
 -- ALSA volume
+local mute = ''
+local vollevels = {
+    '',
+    '' ,
+    ''
+}
 local volicon = wibox.widget.imagebox(theme.widget_vol)
 theme.volume = lain.widget.alsa({
     settings = function()
+        local content = nil
         if volume_now.status == "off" then
-            volume_now.level = volume_now.level .. "M"
+            content = markup.fontfg(fonts.iconic .. ' 9', '#ffffff', '')
+        else
+            local vol_icon =  markup.fontfg(fonts.iconic .. ' 9', '#ffffff',
+               '')
+            local markup =  markup.fontfg("Roboto Bold 8", "#ffffff",
+            volume_now.level .. "%")
+            content = vol_icon .. ' ' .. markup
         end
-        -- local vol_icon =  markup.fontfg(font.iconic .. ' 9', '#cccccc', ' ')
-        widget:set_markup(markup.fontfg("Roboto Bold 8", "#cccccc", " " .. volume_now.level .. "%  "))
+
+        widget:set_markup(content)
     end
 })
 
@@ -230,6 +243,7 @@ function theme.at_screen_connect(s)
             right = 20,
             { -- Right widgets
                 layout = wibox.layout.fixed.horizontal,
+                spacing = 10,
                 wibox.widget.systray(),
 
                 theme.volume.widget,
