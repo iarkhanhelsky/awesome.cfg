@@ -200,8 +200,6 @@ root.buttons(my_table.join(
 
 -- {{{ Key bindings
 globalkeys = my_table.join(
-    -- Take a screenshot
-    -- https://github.com/lcpz/dots/blob/master/bin/screenshot
     awful.key({ altkey }, "p", commands.screenshot,
               {description = "take a screenshot", group = "hotkeys"}),
 
