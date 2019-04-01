@@ -34,6 +34,8 @@ local rules =  {
     { rule = { class = "Gimp", role = "gimp-image-window" },
           properties = { maximized = true } },
 
+    { rule = { class = "Peek" }, properties = { floating = true } },
+
     --
 
     { rule = { class = "House Hunter" },
