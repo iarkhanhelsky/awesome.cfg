@@ -40,6 +40,8 @@ local rules =  {
 
     { rule = { class = "House Hunter" },
       properties = { floating = true } },
+    { rule = { class = "Main" },
+      properties = { floating = true } },
     { rule = { class = "Isometric World" },
       properties = { floating = true } },
     { rule = { name = "Simulator" },
