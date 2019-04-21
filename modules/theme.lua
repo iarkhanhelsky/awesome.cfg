@@ -145,6 +145,8 @@ local batlevels = {
     ''    -- full
 }
 
+local baticon = wibox.widget.imagebox(theme.assets ..  '/icons/battery/battery-99.png')
+
 local bat = lain.widget.bat({
     settings = function()
         local perc = bat_now.perc ~= "N/A" and bat_now.perc .. "%" or bat_now.perc
@@ -154,14 +156,8 @@ local bat = lain.widget.bat({
             perc = markup.fontfg(fonts.iconic .. ' 9', '#ffffff', bolt) .. ' ' .. perc
         end
 
-        local baticon = batlevels[5]
-
-        if bat_now.perc ~= 'N/A' and bat_now.perc then
-           baticon = batlevels[math.floor(bat_now.perc / 100.0 * 4) + 1]
-        end
-
-        perc = perc .. ' ' .. markup.fontfg(fonts.iconic .. ' 9', '#ffffff', baticon)
-
+        local icon = theme.assets .. '/icons/battery/battery-' .. bat_now.perc .. '.png'
+        baticon:set_image(icon)
         widget:set_markup(markup.fontfg(theme.font, theme.fg_focus, perc))
     end
 })
@@ -247,6 +243,7 @@ function theme.at_screen_connect(s)
                 wibox.widget.systray(),
 
                 theme.volume.widget,
+                baticon,
                 bat.widget,
                 mytextclock,
                 s.mylayoutbox

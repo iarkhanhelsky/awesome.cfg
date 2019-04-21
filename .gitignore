@@ -1,0 +1,4 @@
+# ingore build folder
+.grably/**
+# generated
+assets/icons/battery/**
