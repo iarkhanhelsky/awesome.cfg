@@ -1,8 +1,8 @@
 local awful = require("awful")
 local beautiful = require("beautiful")
 
+-- All clients will match this rule.
 local common_rule = {
-  -- All clients will match this rule.
   rule = { },
   properties = {
     border_width = beautiful.border_width,
@@ -15,6 +15,7 @@ local common_rule = {
     placement = awful.placement.no_overlap + awful.placement.no_offscreen,
     size_hints_honor = false }
 }
+
 local rules =  {
     common_rule,
     -- Titlebars
