@@ -614,8 +614,8 @@ client.connect_signal("request::titlebars", function(c)
                 wibox.widget({
                     awful.titlebar.widget.floatingbutton (c),
                     awful.titlebar.widget.maximizedbutton(c),
-                    awful.titlebar.widget.stickybutton   (c),
-                    awful.titlebar.widget.ontopbutton    (c),
+                    -- awful.titlebar.widget.stickybutton   (c),
+                    -- awful.titlebar.widget.ontopbutton    (c),
                     awful.titlebar.widget.closebutton    (c),
                     layout = wibox.layout.flex.horizontal,
                     spacing = 10
